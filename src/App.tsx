@@ -2,8 +2,8 @@ import { useState, useRef } from 'react'
 
 import './App.css'
 
-import SkullDef from './defs/SkullDef'
-import Skull2Def from './defs/Skull2Def'
+import Skull1 from './defs/Skull1'
+import Skull2 from './defs/Skull2'
 import ColorMatrix from './filters/ColorMatrix'
 import {In} from "./filters/Types"
 
@@ -12,6 +12,11 @@ import { useGSAP } from "@gsap/react";
     
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { EaselPlugin } from "gsap/EaselPlugin";
+import AztecBird1 from './defs/AztecBird1'
+import AztecCalendar1 from './defs/AztecCalendar1'
+import CirclePattern1 from './defs/CirlcePattern1'
+import Abstract1 from './defs/Abstract1'
+import AztecDog1 from './defs/AztecDog1'
 
 
 gsap.registerPlugin(useGSAP,MotionPathPlugin,EaselPlugin)
@@ -22,12 +27,12 @@ function App() {
   const container = useRef();
 
   useGSAP(() => {
-   
+    gsap.to("#abstract1",{rotation:-360 ,transformOrigin:"50% 50%", duration:100})
     gsap.to("#skull1", {y: -110, duration:3, repeat:-1,yoyo:true, yoyoEase:true});
     gsap.to("#skull2", {x: 20, y:0, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
     gsap.to("#skull3", {x: -170, y: -160, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
 
-    gsap.fromTo("#skull4",{x:40,y:-34},{x:400,y:-400, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
+    gsap.fromTo("#skull4",{x:40,y:-34},{x:400,y:400, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
     gsap.to("#f4-turbulence",{
       attr:{baseFrequency:1},
       duration:3, repeat:-1,yoyo:true, yoyoEase:true
@@ -69,7 +74,7 @@ function App() {
 
         <filter id="f1" >
           <ColorMatrix in={In.SourceGraphic} color='magenta' result="magenta" opacity={0.3}/>
-          <feOffset in="magenta" dx="-60" dy="60" />
+          {/* <feOffset in="magenta" dx="-60" dy="60" /> */}
         </filter>
 
         <filter id="f2" >
@@ -113,20 +118,15 @@ function App() {
           </feMerge>
       </filter>
         <defs>
-          <SkullDef/>
-          <Skull2Def/>
+      
         </defs>
-        {/* <use href="#skull" filter="url(#hard-yellow)"/> */}
-        
-        {/* <use href="#skull"  filter="url(#offset)"/> */}
-
-        {/* <use href="#skull"  filter="url(#moving_filter)"/> */}
-        
-        <use id="skull1" href="#skull"  filter="url(#f4)" x="200px"/>
-        
-        <use id="skull3" href="#skull"  filter="url(#f3)"/>
-        <use id="skull2" href="#skull"  filter="url(#f2)"/>
-        <use id="skull4" href="#skull2"  filter="url(#blue-glow)"/>
+        <CirclePattern1 id="circles1" filter="url(#f1)"/>
+        <Abstract1 id="abstract1" filter="url(#f2)" transform="scale(0.75 0.75)"/>        
+        <Skull1 id="skull1" filter="url(#f4)" x="200px" transform="scale(0.5 0.5)"/>    
+        <AztecCalendar1 id="skull3" filter="url(#f3)"  transform="scale(0.5 0.5)"/>
+        <AztecCalendar1 id="skull2"   filter="url(#f2)"  transform="scale(0.5 0.5)"/>        
+        <AztecBird1 id="skull4" filter="url(#blue-glow)" transform="scale(0.75 0.75)"/>
+        <AztecDog1 id="dog1" filter="url(#f2)"/>        
         </svg>
         
       
