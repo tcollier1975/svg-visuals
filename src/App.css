@@ -10,4 +10,9 @@ svg {
   max-width: 100vw;
   max-height: 100vh;
   pointer-events: none;
+  z-index: -1;
+}
+
+.fullscreen-btn {
+
 }
