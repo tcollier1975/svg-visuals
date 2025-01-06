@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.2",
     "@chiragrupani/fullscreen-react": "^1.2.5",
     "@gsap/react": "^2.1.1",
     "@types/d3-color": "^3.1.3",
     "@types/d3-scale": "^4.0.8",
+    "antd": "^5.22.7",
     "d3-color": "^3.1.0",
     "d3-scale": "^4.0.2",
     "gsap": "^3.12.5",
