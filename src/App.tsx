@@ -19,7 +19,8 @@ import Abstract1 from './defs/Abstract1'
 import AztecDog1 from './defs/AztecDog1'
 
 import { FullScreen } from '@chiragrupani/fullscreen-react'
-
+import { FloatButton, ConfigProvider } from 'antd';
+import { FullscreenOutlined } from '@ant-design/icons'
 gsap.registerPlugin(useGSAP,MotionPathPlugin,EaselPlugin)
 
 
@@ -57,13 +58,41 @@ function App() {
 
   return (
     <div>
-    <button className='fullscreen-btn' onClick={()=>{setFullScreen(!isFullScreen)}}/>
-    <FullScreen
-      isFullScreen={isFullScreen}
-      onChange={(isFullScreen) => {
-          this.setState({ isFullScreen });
-      }}
-    >
+        <ConfigProvider
+    theme={{
+      token: {
+        // Seed Token
+        colorPrimary: '#00b96b',
+        borderRadius: 2,
+
+        // Alias Token
+        colorBgContainer: '#f6ffed',
+      },
+    }}
+  >
+
+{/* <FloatButton shape="circle" style={{ insetInlineEnd: 24 + 70 + 70 }} badge={{ dot: true }} />
+    <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 + 70 }}>
+      <FloatButton
+        href="https://ant.design/index-cn"
+        tooltip={<div>custom badge color</div>}
+        badge={{ count: 5, color: 'blue' }}
+      />
+      <FloatButton badge={{ count: 5 }} />
+    </FloatButton.Group>
+    <FloatButton.Group shape="circle">
+      <FloatButton badge={{ count: 12 }} icon={<QuestionCircleOutlined />} />
+      <FloatButton badge={{ count: 123, overflowCount: 999 }} />
+      <FloatButton.BackTop visibilityHeight={0} />
+    </FloatButton.Group> */}
+  
+    <FloatButton
+     icon={<FullscreenOutlined className='float-button-icon'/>} 
+     onClick={()=>{setFullScreen(!isFullScreen)}}
+     className='float-button'
+     />
+
+    <FullScreen isFullScreen={isFullScreen} onChange={(isFullScreen) => setState({ isFullScreen })}>
     
         <svg ref={container} id="svg" width="100%" height="100%" viewBox={viewBox}>
           <filter id="offset" >
@@ -145,7 +174,7 @@ function App() {
           <AztecDog1 id="dog1" filter="url(#f2)"/>        
         </svg>
       </FullScreen>
-      
+      </ConfigProvider>
     </div>
   )
 }
