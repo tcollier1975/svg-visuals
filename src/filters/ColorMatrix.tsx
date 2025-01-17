@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {scaleLinear} from "d3-scale"
 import {rgb} from "d3-color"
 import {In} from "./Types"
@@ -6,7 +6,8 @@ interface ColorProps {
     color?:string, //#ffff, blue, rbg(222, 0, 111) 
     opacity?:number, //0 - 1
     result?:string,
-    in?:any
+    in?:In | string,
+    id:string
 
 }
 
@@ -24,15 +25,17 @@ const ColorMatrix = (props:ColorProps)=>{
 
 
     return (
+        <filter id={props.id}>
+          <feColorMatrix
+            in={props.in}
+            result={props.result}
+            type="matrix"
+            values={`1   0   0   ${r}   0
+                     0   1   0   ${g}   0
+                     0   0   1   ${b}   0
+                     0   0   0   ${a}   0 `}/>
+        </filter>
         
-        <feColorMatrix
-          in={props.in}
-          result={props.result}
-          type="matrix"
-          values={`1   0   0   ${r}   0
-                   0   1   0   ${g}   0
-                   0   0   1   ${b}   0
-                   0   0   0   ${a}   0 `}/>
         
 
     )

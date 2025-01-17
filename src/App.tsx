@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 import Skull1 from './defs/Skull1'
-import Skull2 from './defs/Skull2'
+
 import ColorMatrix from './filters/ColorMatrix'
 import {In} from "./filters/Types"
 
@@ -19,15 +19,20 @@ import Abstract1 from './defs/Abstract1'
 import AztecDog1 from './defs/AztecDog1'
 
 import { FullScreen } from '@chiragrupani/fullscreen-react'
-import { FloatButton, ConfigProvider } from 'antd';
-import { FullscreenOutlined } from '@ant-design/icons'
+import { FloatButton, Drawer } from 'antd';
+import { FullscreenOutlined, SettingFilled } from '@ant-design/icons'
+
+
+
 gsap.registerPlugin(useGSAP,MotionPathPlugin,EaselPlugin)
 
 
 function App() {
   
   const container = useRef();
-  let [isFullScreen, setFullScreen] = useState(false);
+  const [isFullScreen, setFullScreen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  
 
   useGSAP(() => {
     gsap.to("#abstract1",{rotation:-360 ,transformOrigin:"50% 50%", duration:100})
@@ -58,41 +63,13 @@ function App() {
 
   return (
     <div>
-        <ConfigProvider
-    theme={{
-      token: {
-        // Seed Token
-        colorPrimary: '#00b96b',
-        borderRadius: 2,
-
-        // Alias Token
-        colorBgContainer: '#f6ffed',
-      },
-    }}
-  >
-
-{/* <FloatButton shape="circle" style={{ insetInlineEnd: 24 + 70 + 70 }} badge={{ dot: true }} />
-    <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 + 70 }}>
-      <FloatButton
-        href="https://ant.design/index-cn"
-        tooltip={<div>custom badge color</div>}
-        badge={{ count: 5, color: 'blue' }}
-      />
-      <FloatButton badge={{ count: 5 }} />
-    </FloatButton.Group>
-    <FloatButton.Group shape="circle">
-      <FloatButton badge={{ count: 12 }} icon={<QuestionCircleOutlined />} />
-      <FloatButton badge={{ count: 123, overflowCount: 999 }} />
-      <FloatButton.BackTop visibilityHeight={0} />
-    </FloatButton.Group> */}
-  
-    <FloatButton
-     icon={<FullscreenOutlined className='float-button-icon'/>} 
-     onClick={()=>{setFullScreen(!isFullScreen)}}
-     className='float-button'
-     />
-
-    <FullScreen isFullScreen={isFullScreen} onChange={(isFullScreen) => setState({ isFullScreen })}>
+      
+        <FloatButton icon={<FullscreenOutlined />} type="default" style={{ insetInlineEnd: 30 }} onClick={()=>{setFullScreen(!isFullScreen)}}/>
+        <FloatButton icon={<SettingFilled />} type="default" style={{ insetInlineEnd: 90 }} onClick={()=>{setDrawerOpen(true)}} />
+        <Drawer title="Multi-level drawer" width={520} onClose={()=>setDrawerOpen(false)} open={drawerOpen}>
+          <h1>hi</h1>
+        </Drawer>
+        <FullScreen isFullScreen={isFullScreen} onChange={(isFullScreen) => setState({ isFullScreen })}>
     
         <svg ref={container} id="svg" width="100%" height="100%" viewBox={viewBox}>
           <filter id="offset" >
@@ -113,29 +90,11 @@ function App() {
         
 
         
-          <filter id="hard-yellow">
-            <ColorMatrix color='yellow'/>
-          </filter>
-
-          <filter id="f1" >
-            <ColorMatrix in={In.SourceGraphic} color='magenta' result="magenta" opacity={0.3}/>
-            {/* <feOffset in="magenta" dx="-60" dy="60" /> */}
-          </filter>
-
-          <filter id="f2" >
-            <ColorMatrix in={In.SourceGraphic} color='yellow' result="yellow" opacity={0.3}/>
-            
-          </filter>
-
-          <filter id="f3" >
-            <ColorMatrix in={In.SourceGraphic} color='cyan' result="cyan" opacity={0.3}/>    
-          </filter>
-
-          <filter id="f3-offset" >
-            <ColorMatrix in={In.SourceGraphic} color='cyan' result="cyan" opacity={0.3}/>
-            <feOffset in="cyan" dx="0" dy="-60" />
-          </filter>
-
+          <ColorMatrix id="hard-yellow" color='yellow'/>
+          <ColorMatrix id="f1" in={In.SourceGraphic} color='magenta' result="magenta" opacity={0.3}/>
+          <ColorMatrix id="f2" in={In.SourceGraphic} color='yellow' result="yellow" opacity={0.3}/>
+          <ColorMatrix id="f3" in={In.SourceGraphic} color='cyan' result="cyan" opacity={0.3}/>
+          
           <filter id="f4">
         
             <feTurbulence   
@@ -173,8 +132,10 @@ function App() {
           <AztecBird1 id="skull4" filter="url(#blue-glow)" transform="scale(0.75 0.75)"/>
           <AztecDog1 id="dog1" filter="url(#f2)"/>        
         </svg>
+
+      
       </FullScreen>
-      </ConfigProvider>
+    
     </div>
   )
 }
