@@ -36,16 +36,19 @@ function App() {
   
 
   useGSAP(() => {
-    gsap.to("#abstract1",{rotation:-360 ,transformOrigin:"50% 50%", duration:100})
+    gsap.to("#abstract1",{rotation:-360 ,transformOrigin:"60% 30%", duration:300, repeat:-1, yoyoEase:true})
     gsap.to("#skull1", {y: -110, duration:3, repeat:-1,yoyo:true, yoyoEase:true});
     gsap.to("#skull2", {x: 20, y:0, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
-    gsap.to("#skull3", {x: -170, y: -160, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
+    gsap.fromTo("#skull2",{strokeOpacity:0}, {strokeOpacity:1, duration: 40, repeat:-1, delay:3, yoyo:true, yoyoEase:true})
+    gsap.to("#skull3", {x: -170, y: -160, duration:30, repeat:-1,yoyo:true, yoyoEase:true})
+    
+    gsap.fromTo("#dog1",{fill:"green"},{fill:'red', duration:500, repeat:-1, yoyo:true, yoyoEase:true})
 
-    gsap.fromTo("#skull4",{x:40,y:-34},{x:400,y:400, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
-    gsap.to("#f4-turbulence",{
-      attr:{baseFrequency:1},
-      duration:3, repeat:-1,yoyo:true, yoyoEase:true
-    })
+    // gsap.fromTo("#skull4",{x:40,y:-34},{x:400,y:400, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
+    // gsap.to("#f4-turbulence",{
+    //   attr:{baseFrequency:1},
+    //   duration:3, repeat:-1,yoyo:true, yoyoEase:true
+    // })
      
 
   }, { scope: container });
@@ -92,9 +95,11 @@ function App() {
 
           <Metalic1 id="m1"/>
           <ColorMatrix id="hard-yellow" color='yellow'/>
+          
           <ColorMatrix id="f1" in={In.SourceGraphic} color='magenta' result="magenta" opacity={0.3}/>
-          <ColorMatrix id="f2" in={In.SourceGraphic} color='yellow' result="yellow" opacity={0.3}/>
+          <ColorMatrix id="f2" in={In.SourceGraphic} color='black' result="yellow" opacity={0.3}/>
           <ColorMatrix id="f3" in={In.SourceGraphic} color='cyan' result="cyan" opacity={0.3}/>
+          <ColorMatrix id="f4" in={In.SourceGraphic} color='#ff00af' result="magenta" opacity={0.3}/>
           
           <filter id="f4">
         
@@ -125,13 +130,14 @@ function App() {
           <defs>
         
           </defs>
-          <CirclePattern1 id="circles1" filter="url(#f1)"/>
+          {/* <CirclePattern1 id="circles1" filter="url(#f1)"/> */}
+          <AztecDog1 id="dog1" fill='red'/>   
           <Abstract1 id="abstract1" filter="url(#f2)" transform="scale(0.75 0.75)"/>        
-          <Skull1 id="skull1" filter="url(#f4)" x="200px" transform="scale(0.5 0.5)"/>    
-          <AztecCalendar1 id="skull3" filter="url(#f3)"  transform="scale(0.5 0.5)"/>
-          <AztecCalendar1 id="skull2"   filter="url(#f2)"  transform="scale(0.5 0.5)"/>        
+          {/* <Skull1 id="skull1" filter="url(#f4)" x="200px" transform="scale(0.5 0.5)"/>     */}
+          <AztecCalendar1 id="skull3"  transform="scale(0.5 0.5)" stroke='#052bff'/>
+          <AztecCalendar1 id="skull2"  transform="scale(0.5 0.5)" stroke='yellow'/>        
           {/* <AztecBird1 id="skull4" filter="url(#m1)" transform="scale(0.75 0.75)"/> */}
-          <AztecDog1 id="dog1" filter="url(#f2)"/>        
+               
         </svg>
 
       

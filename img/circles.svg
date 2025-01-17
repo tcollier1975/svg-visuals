@@ -13,63 +13,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs20">
-    <filter
-       inkscape:label="Jam Spread"
-       inkscape:menu="Textures"
-       inkscape:menu-tooltip="Glossy clumpy jam spread"
-       style="color-interpolation-filters:sRGB;"
-       id="filter55"
-       x="-0.0025384583"
-       y="-0.002546917"
-       width="1.0050769"
-       height="1.0050938">
-      <feGaussianBlur
-         stdDeviation="2"
-         in="SourceGraphic"
-         result="result0"
-         id="feGaussianBlur54" />
-      <feTurbulence
-         result="result1"
-         numOctaves="1"
-         seed="488"
-         baseFrequency="0.007"
-         type="turbulence"
-         id="feTurbulence54" />
-      <feComposite
-         in="result0"
-         in2="result1"
-         operator="out"
-         result="result2"
-         id="feComposite54" />
-      <feGaussianBlur
-         stdDeviation="0.5"
-         result="result5"
-         id="feGaussianBlur55" />
-      <feSpecularLighting
-         in="result5"
-         specularExponent="100"
-         specularConstant="4"
-         result="result4"
-         surfaceScale="1.5"
-         id="feSpecularLighting55">
-        <feDistantLight
-           azimuth="225"
-           elevation="62"
-           id="feDistantLight55" />
-      </feSpecularLighting>
-      <feComposite
-         operator="atop"
-         in="result4"
-         in2="result2"
-         result="result91"
-         id="feComposite55" />
-      <feBlend
-         mode="multiply"
-         in2="result91"
-         id="feBlend55" />
-    </filter>
-  </defs>
+     id="defs20" />
   <sodipodi:namedview
      id="namedview20"
      pagecolor="#ffffff"
@@ -80,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="4.9782897"
-     inkscape:cx="76.934053"
-     inkscape:cy="81.955858"
+     inkscape:zoom="0.53124673"
+     inkscape:cx="32.000197"
+     inkscape:cy="24.470739"
      inkscape:window-width="1528"
      inkscape:window-height="905"
      inkscape:window-x="0"
@@ -101,10 +45,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
     <path
        d="M 1050,9744 C 970,9734 822,9696 742,9664 578,9597 444,9505 318,9370 -24,9005 -97,8463 137,8019 c 171,-325 484,-552 848,-616 122,-21 368,-13 475,15 230,61 417,169 572,330 511,532 422,1385 -189,1800 -117,79 -259,140 -403,173 -83,19 -311,32 -390,23 z"
        id="path1"
-       style="fill:#00ffff;filter:url(#filter55)" />
+       style="fill:#000000;filter:url(#filter55);fill-opacity:1" />
     <path
        d="m 3625,9740 c -446,-71 -814,-378 -955,-798 -224,-670 193,-1390 887,-1531 112,-23 312,-28 420,-11 371,60 706,307 876,645 77,155 117,333 117,528 0,551 -379,1025 -920,1148 -99,23 -333,33 -425,19 z"
-       id="path2" />
+       id="path2"
+       style="fill:#000000;fill-opacity:1" />
     <path
        d="m 6280,9745 c -8,-2 -49,-9 -90,-15 -349,-57 -673,-297 -839,-620 -174,-340 -176,-740 -7,-1074 156,-304 422,-519 761,-613 94,-26 112,-28 295,-28 182,0 202,2 293,27 129,36 226,78 323,137 266,165 452,418 531,720 34,132 42,338 19,480 -81,485 -443,861 -928,967 -66,14 -321,28 -358,19 z"
        id="path3" />
