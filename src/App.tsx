@@ -5,6 +5,7 @@ import './App.css'
 import Skull1 from './defs/Skull1'
 
 import ColorMatrix from './filters/ColorMatrix'
+import Metalic1 from './filters/Metalic1'
 import {In} from "./filters/Types"
 
 import { gsap } from "gsap";
@@ -89,7 +90,7 @@ function App() {
 
         
 
-        
+          <Metalic1 id="m1"/>
           <ColorMatrix id="hard-yellow" color='yellow'/>
           <ColorMatrix id="f1" in={In.SourceGraphic} color='magenta' result="magenta" opacity={0.3}/>
           <ColorMatrix id="f2" in={In.SourceGraphic} color='yellow' result="yellow" opacity={0.3}/>
@@ -129,7 +130,7 @@ function App() {
           <Skull1 id="skull1" filter="url(#f4)" x="200px" transform="scale(0.5 0.5)"/>    
           <AztecCalendar1 id="skull3" filter="url(#f3)"  transform="scale(0.5 0.5)"/>
           <AztecCalendar1 id="skull2"   filter="url(#f2)"  transform="scale(0.5 0.5)"/>        
-          <AztecBird1 id="skull4" filter="url(#blue-glow)" transform="scale(0.75 0.75)"/>
+          {/* <AztecBird1 id="skull4" filter="url(#m1)" transform="scale(0.75 0.75)"/> */}
           <AztecDog1 id="dog1" filter="url(#f2)"/>        
         </svg>
 
