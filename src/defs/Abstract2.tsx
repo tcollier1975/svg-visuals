@@ -1,7 +1,7 @@
 import * as React from "react";
 const Abstract2 = (props) => (
   <svg
-    width="26.458258mm"
+    width="26.458258mm" 
     height="26.458334mm"
     viewBox="0 0 26.458257 26.458334"
     id="svg1"

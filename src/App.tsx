@@ -13,6 +13,7 @@ import { useGSAP } from "@gsap/react";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { EaselPlugin } from "gsap/EaselPlugin";
 import AztecBird1 from './defs/AztecBird1'
+import AztecBird2 from './defs/AztecBird2'
 import AztecCalendar1 from './defs/AztecCalendar1'
 import CirclePattern1 from './defs/CirlcePattern1'
 import Abstract1 from './defs/Abstract1'
@@ -174,6 +175,9 @@ function App() {
           {/* <AztecCalendar1 id="skull3" filter="url(#f3)"  transform="scale(0.5 0.5)"/> */}
           {/* <AztecCalendar1 id="skull2"   filter="url(#f2)"  transform="scale(0.5 0.5)"/>         */}
           {/* <AztecBird1 id="skull4" filter="url(#blue-glow)" transform="scale(0.75 0.75)"/> */}
+           <AztecBird2 className="center color-red" transform="translate(-50 -50) scale(10) translate(80 50)"
+            
+            /> 
           {/* <AztecDog1 id="dog1" filter="url(#f2)"/>         */}
         </svg>
       </FullScreen>
