@@ -20,3 +20,47 @@ svg {
 .float-button-icon{
  background-color: aquamarine;
 }
+
+@keyframes rotate-animate { 
+  0% {
+      transform: rotate(0deg);
+      fill:orange;
+      stroke:red;
+  }
+  25%{
+    fill:crimson;
+    stroke-width: 3px;
+    stroke:coral; 
+  }
+  50% {
+    stroke-width: 10px;
+  }
+  75% {
+    stroke-width: 5px;
+  }
+  100% {
+      transform: rotate(360deg);
+      fill:pink;
+      stroke:blueviolet;
+      stroke-width: 1px;
+  }
+  
+}
+.center{
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.rotate-cw {
+  animation: rotate-animate 100s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.color-red{
+  fill:orange;
+  stroke:red;
+}
+.color-gold {
+  fill:#dcc57c;
+  stroke:#dcc57c;
+}

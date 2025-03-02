@@ -16,6 +16,7 @@ import AztecBird1 from './defs/AztecBird1'
 import AztecCalendar1 from './defs/AztecCalendar1'
 import CirclePattern1 from './defs/CirlcePattern1'
 import Abstract1 from './defs/Abstract1'
+import Abstract2 from './defs/Abstract2'
 import AztecDog1 from './defs/AztecDog1'
 
 import { FullScreen } from '@chiragrupani/fullscreen-react'
@@ -30,7 +31,7 @@ function App() {
   let [isFullScreen, setFullScreen] = useState(false);
 
   useGSAP(() => {
-    gsap.to("#abstract1",{rotation:-360 ,transformOrigin:"50% 50%", duration:100})
+    // gsap.to("#abstract1",{rotation:-360 ,transformOrigin:"50% 50%", duration:100})
     gsap.to("#skull1", {y: -110, duration:3, repeat:-1,yoyo:true, yoyoEase:true});
     gsap.to("#skull2", {x: 20, y:0, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
     gsap.to("#skull3", {x: -170, y: -160, duration:3, repeat:-1,yoyo:true, yoyoEase:true})
@@ -123,7 +124,7 @@ function App() {
           </filter>
 
           <filter id="f2" >
-            <ColorMatrix in={In.SourceGraphic} color='yellow' result="yellow" opacity={0.3}/>
+            <ColorMatrix in={In.SourceGraphic} color='yellow' result="yellow" opacity={0.8}/>
             
           </filter>
 
@@ -165,13 +166,15 @@ function App() {
           <defs>
         
           </defs>
-          <CirclePattern1 id="circles1" filter="url(#f1)"/>
-          <Abstract1 id="abstract1" filter="url(#f2)" transform="scale(0.75 0.75)"/>        
-          <Skull1 id="skull1" filter="url(#f4)" x="200px" transform="scale(0.5 0.5)"/>    
-          <AztecCalendar1 id="skull3" filter="url(#f3)"  transform="scale(0.5 0.5)"/>
-          <AztecCalendar1 id="skull2"   filter="url(#f2)"  transform="scale(0.5 0.5)"/>        
-          <AztecBird1 id="skull4" filter="url(#blue-glow)" transform="scale(0.75 0.75)"/>
-          <AztecDog1 id="dog1" filter="url(#f2)"/>        
+          {/* <CirclePattern1 id="circles1" filter="url(#f1)"/> */}
+          {/* <Abstract1 id="abstract1" className="center rotate-cw" filter="url(#f2)" /> */}
+          <Abstract1 id="abstract1" className="center rotate-cw color-red" />
+          {/* <Abstract2 id="abstract1" className="center color-gold rotate-cw" height="600" width="600"/> */}
+          {/* <Skull1 id="skull1" filter="url(#f4)" x="200px" transform="scale(0.5 0.5)"/>     */}
+          {/* <AztecCalendar1 id="skull3" filter="url(#f3)"  transform="scale(0.5 0.5)"/> */}
+          {/* <AztecCalendar1 id="skull2"   filter="url(#f2)"  transform="scale(0.5 0.5)"/>         */}
+          {/* <AztecBird1 id="skull4" filter="url(#blue-glow)" transform="scale(0.75 0.75)"/> */}
+          {/* <AztecDog1 id="dog1" filter="url(#f2)"/>         */}
         </svg>
       </FullScreen>
       </ConfigProvider>
