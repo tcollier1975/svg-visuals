@@ -1,3 +1,8 @@
+
+:root {
+  --main-bg-color: brown;
+}
+
 #root {
   max-width: 100%;
   max-height: 100%;
@@ -20,8 +25,43 @@ svg {
 .float-button-icon{
  background-color: aquamarine;
 }
+@keyframes rotate-animate {
+    0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 
-@keyframes rotate-animate { 
+}
+
+@keyframes color-animate { 
+  0% {      
+      fill:orange;
+      stroke:red;
+  }
+  25%{
+    fill:crimson;
+    stroke:coral; 
+  }
+  50% {
+    stroke-width: 10px;
+  }
+  75% {
+    stroke-width: 5px;
+  }
+  100% {
+    
+      fill:pink;
+      stroke:blueviolet;
+      
+  }
+  
+}
+
+@keyframes motion-animate {
+  0% {transform: translate(0,0);}
+100% {transform: translate(10,10);}
+
+}
+
+@keyframes rotate-animate-orig { 
   0% {
       transform: rotate(0deg);
       fill:orange;
@@ -52,8 +92,15 @@ svg {
 }
 
 .rotate-cw {
-  animation: rotate-animate 100s ease-in-out infinite;
+  animation-name:
+    rotate-animate,
+    color-animate;
+  animation-iteration-count: 1 ,infinite;
+  animation-delay:  0ms;
+  animation-duration:  100s;
+  animation-timing-function:ease-in-out;
   animation-direction: alternate;
+
 }
 
 .color-red{
