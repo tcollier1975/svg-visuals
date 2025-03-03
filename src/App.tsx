@@ -18,6 +18,7 @@ import AztecCalendar1 from './defs/AztecCalendar1'
 import CirclePattern1 from './defs/CirlcePattern1'
 import Abstract1 from './defs/Abstract1'
 import Abstract2 from './defs/Abstract2'
+import Abstract3 from './defs/Abstract3'
 import AztecDog1 from './defs/AztecDog1'
 
 import { FullScreen } from '@chiragrupani/fullscreen-react'
@@ -167,6 +168,12 @@ function App() {
           <defs>
         
           </defs>
+          <Abstract3 
+            className=""       
+            fill="purple"
+            stroke="yellow"
+            transform=" scale(.2) translate(-500 0)"
+          />
           {/* <CirclePattern1 id="circles1" filter="url(#f1)"/> */}
           {/* <Abstract1 id="abstract1" className="center rotate-cw" filter="url(#f2)" /> */}
           <Abstract1 id="abstract1" className="center rotate-cw color-red" />
