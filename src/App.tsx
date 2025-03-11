@@ -53,6 +53,8 @@ function App() {
      />
 
     <FullScreen isFullScreen={isFullScreen} onChange={(isFullScreen) => setState({ isFullScreen })}>
+
+    
     <Carousel effect="fade" autoplay autoplaySpeed={5000}>
     
     <div>

@@ -1,13 +1,16 @@
 
 :root {
   --main-bg-color: brown;
+  --path-1: 'm 167.20773,32.724033 c -4.77763,37.101092 -16.28141,53.948614 -30.08798,100.591137 -16.47198,51.824 -38.079646,43.0866 -50.156707,32.60469 -18.12022,-10.63178 -47.774097,-1.81038 -41.684108,-45.58609 13.237099,-75.359424 14.903984,-8.40001 67.450215,-88.126802 16.17197,-26.4010637 58.40821,-40.056235 54.47858,0.517065 z';
+  --path-2: 'm 37.041667,56.091666 c 35.71875,-11.1125 55.827086,-7.672917 103.981253,-14.552083 53.975,-6.614584 55.03333,16.66875 50.53541,32.014583 -2.11667,20.902083 18.25625,44.185414 -24.07708,56.885414 C 93.457903,149.79953 135.37979,115.89184 41.010416,101.33541 10.272282,97.631873 -1.480389,69.421555 37.041667,56.091666 Z';
+  --path-3: 'M 125.97893,166.71139 C 104.90234,152.67582 117.58816,103.74524 101.35872,86.761067 93.613186,78.65534 60.688583,105.81778 49.160322,95.137896 10.014289,57.393478 27.427232,41.900812 42.177612,35.724071 59.742056,24.197257 64.984866,-6.293437 101.52087,18.576648 c 61.67546,45.281346 0.92008,17.083393 49.07909,99.534452 16.4923,26.20216 10.00261,70.11397 -24.62103,48.60029 z';
 }
 
 #root {
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
 }
 
@@ -24,6 +27,23 @@ svg {
 
 .float-button-icon{
  background-color: aquamarine;
+}
+
+
+@keyframes move {
+  0% { transform: translateX(4px) translateY(-4px);}
+  15% { transform: translateX(-30px) translateY(-10px);}
+  35% {transform: translateX(-10px) translateY(10px);}
+  75% {transform: translateX(30px) translateY(-5px);}
+  100% {transform: translateX(4px) translateY(-4px);}
+}
+
+@keyframes move1 {
+  0% { transform: translateX(0px) translateY(0px);}
+  5% { transform: translateX(-30px) translateY(-10px);}
+ 25% {transform: translateX(-10px) translateY(10px);}
+ 75% {transform: translateX(30px) translateY(-5px);}
+100% {transform: translateX(0px) translateY(0px);}
 }
 @keyframes motion-animate {
     0% {transform: translateX(0px) rotate(0deg) scale(1);}
@@ -120,4 +140,63 @@ svg {
 .color-gold {
   fill:#dcc57c;
   stroke:#dcc57c;
+}
+
+.animation-1 {  
+  animation-name: move1; 
+  animation-iteration-count: infinite;
+  animation-delay:  0ms;
+  animation-duration:  20s;
+  animation-timing-function:ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  fill:#ffffff;
+  fill-opacity: 10%;
+  stroke:cyan;
+  stroke-width: 10px;
+  stroke-opacity: 50%;
+  
+}
+.animation-2 {
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-delay:  0ms;
+  animation-duration:  100s;
+  animation-timing-function:ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  fill:#ffffff;
+  fill-opacity: 10%;
+  stroke:magenta;
+  stroke-width: 10px;
+  stroke-opacity: 50%;;
+}
+.animation-3 {
+
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-delay:  0ms;
+  animation-duration:  200s;
+  animation-timing-function:ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  fill:#ffffff;
+  fill-opacity: 10%;
+  stroke:yellow;
+  stroke-width: 10px;
+  stroke-opacity: 50%;
+}
+
+
+
+// css styles file
+.ant-carousel,
+.slick-slider,
+.slick-list,
+.slick-track {
+  height: 100% !important;
+}
+
+.slick-slide > div:first-child {
+  height: 100% !important;
 }
