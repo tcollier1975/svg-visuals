@@ -28,7 +28,7 @@ function Scene_One() {
           />
 
           <Abstract1 id="abstract1" className="center rotate-cw color-red" />    
-          <AztecBird2 className="center color-red" transform="translate(-50 -50) scale(10) translate(80 50)"/> 
+          <AztecBird2 className="center color-red-animation" transform="translate(-50 -50) scale(10) translate(80 50)"/> 
     
         </svg>
       
