@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 
 import './App.css'
-
+import "./carousel.css"
 
 import { FullScreen } from '@chiragrupani/fullscreen-react'
 import { FloatButton, ConfigProvider , Carousel} from 'antd';
@@ -57,21 +57,22 @@ function App() {
 
     {/* <Scene_Three/> */}
     <Carousel 
+      className='fullscreen-carousel'
       effect="fade" 
       autoplay 
       autoplaySpeed={60000}
       >
     
-    <div>
+    
       <Scene_One/>
-    </div>
+    
 
-    <div>
+    
       <Scene_Two/>
-    </div>
-    <div>
+    
+    
       <Scene_Three/>
-    </div>
+    
     
     
   </Carousel>
