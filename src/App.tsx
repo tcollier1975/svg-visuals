@@ -10,6 +10,7 @@ import { FullscreenOutlined } from '@ant-design/icons'
 
 import Scene_One from './scenes/scene_one'
 import Scene_Two from './scenes/scene_two'
+import Scene_Three from './scenes/scene_three';
 
 function App() {
   
@@ -54,8 +55,12 @@ function App() {
 
     <FullScreen isFullScreen={isFullScreen} onChange={(isFullScreen) => setState({ isFullScreen })}>
 
-    
-    <Carousel effect="fade" autoplay autoplaySpeed={5000}>
+    {/* <Scene_Three/> */}
+    <Carousel 
+      effect="fade" 
+      autoplay 
+      autoplaySpeed={60000}
+      >
     
     <div>
       <Scene_One/>
@@ -64,7 +69,9 @@ function App() {
     <div>
       <Scene_Two/>
     </div>
-    
+    <div>
+      <Scene_Three/>
+    </div>
     
     
   </Carousel>
